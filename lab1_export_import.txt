@@ -1,0 +1,11 @@
+# Aller vers le Bureau
+cd /d "%USERPROFILE%\Desktop"
+
+# Exporter la table utilisateur
+"C:\Program Files\MySQL\MySQL Server 8.4\bin\mysqldump" -u root -p testdb utilisateur > utilisateur_dump.sql
+
+# Exporter toute la base de données
+"C:\Program Files\MySQL\MySQL Server 8.4\bin\mysqldump" -u root -p testdb > testdb_full_dump.sql
+
+# Importer les données
+"C:\Program Files\MySQL\MySQL Server 8.4\bin\mysql" -u root -p testdb < utilisateur_dump.sql
